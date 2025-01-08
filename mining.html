@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mining in Progress</title>
+</head>
+<body>
+    <h1>Mining in Progress...</h1>
+    <pre>
+{% for line in simulation_output %}
+{{ line | safe }}
+{% endfor %}
+    </pre>
+    {% if not mining %}
+    <h2>Mining Complete!</h2>
+    <a href="/">Start Again</a>
+    {% else %}
+    <a href="/stop">Stop Mining</a>
+    {% endif %}
+</body>
+</html>
